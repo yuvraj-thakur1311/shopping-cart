@@ -39,27 +39,42 @@ Build a simple shopping cart flow with a backend API and frontend UI.
 
 ## 📁 Project Structure
 
-```
-minimal-ecommerce/
+``` 
+shopping-cart/
 │
 ├── backend/
-│   ├── server.js              # Express app with routes
+│   ├── server.js
 │   ├── package.json
+│   ├── .env
+│   ├── .gitignore
 │   └── tests/
-│       └── products.test.js   # API tests
+│       └── products.test.js
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── components/        # CartItem, Navbar, Product, Spinner
+│   │   ├── components/
+│   │   │   ├── CartItem.js
+│   │   │   ├── Navbar.js
+│   │   │   ├── Product.js
+│   │   │   └── Spinner.css
 │   │   ├── redux/
 │   │   │   ├── slice/
 │   │   │   │   └── CartSlice.js
 │   │   │   └── store.js
-│   │   ├── pages/             # Home, Cart
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   └── Cart.js
 │   │   ├── App.js
-│   │   └── index.js
+│   │   ├── App.css
+│   │   ├── index.js
+│   │   └── index.css
 │   ├── public/
-│   └── package.json
+│   │   └── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── .gitignore
+│   ├── postcss.config.js
+│   └── tailwind.config.js
 │
 └── README.md
 ```
