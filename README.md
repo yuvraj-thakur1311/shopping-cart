@@ -39,6 +39,7 @@ Build a simple shopping cart flow with a backend API and frontend UI.
 
 ## 📁 Project Structure
 
+```
 minimal-ecommerce/
 │
 ├── backend/
@@ -61,6 +62,7 @@ minimal-ecommerce/
 │   └── package.json
 │
 └── README.md
+```
 
 ## ⚙️ Setup Instructions
 
