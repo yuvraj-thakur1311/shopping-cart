@@ -1,15 +1,16 @@
-### E-Commerce Project
+# E-Commerce Project
 
 A minimal full-stack e-commerce site where users can browse products, add them to a cart, and simulate checkout.
 
 This project demonstrates frontend + backend integration, API usage, state management, and testing.
 
-# Project Goal
+### Project Goal
 
 Build a simple shopping cart flow with a backend API and frontend UI.
 
-✨ Core Features
-Backend
+### Core Features
+
+#### Backend
 
 Products API – Returns a JSON list of products (hardcoded or fetched from Fake Store API
 ).
