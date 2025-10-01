@@ -1,16 +1,15 @@
-# E-Commerce Project
+E-Commerce Project
 
 A minimal full-stack e-commerce site where users can browse products, add them to a cart, and simulate checkout.
 
 This project demonstrates frontend + backend integration, API usage, state management, and testing.
 
-### Project Goal
+Project Goal
 
 Build a simple shopping cart flow with a backend API and frontend UI.
 
-### Core Features
-
-#### Backend
+Core Features
+Backend
 
 Products API – Returns a JSON list of products (hardcoded or fetched from Fake Store API
 ).
@@ -37,21 +36,21 @@ Frontend: React, Redux Toolkit (for cart state), Fetch API
 
 Testing: Jest, Supertest (backend API tests)
 
-📂 Project Structure
+Project Structure
 project-root/
 │
 ├── backend/
-│   ├── server.js       # Express app (routes defined here)
-│   ├── start.js        # Entry point (starts server on PORT 5000)
+│   ├── server.js         # Express app (routes defined here)
+│   ├── start.js          # Entry point (starts server on PORT 5000)
 │   ├── package.json
 │   └── tests/
 │       └── products.test.js   # Example Jest/Supertest test
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── components/ # React components
-│   │   ├── redux/      # Cart slice + store
-│   │   ├── pages/      # Home, Cart pages
+│   │   ├── components/   # React components
+│   │   ├── redux/        # Cart slice + store
+│   │   ├── pages/        # Home, Cart pages
 │   │   └── App.js
 │   ├── public/
 │   │   └── index.html
@@ -82,9 +81,7 @@ From backend/ directory:
 
 npm test
 
-
-Example test (tests/products.test.js):
-
+Example test (tests/products.test.js)
 const request = require('supertest');
 const app = require('../server');
 
@@ -103,7 +100,7 @@ No database → Products are hardcoded or fetched from Fake Store API.
 
 Cart state is client-side only (with optional localStorage persistence).
 
-The backend is separated from the frontend for clear API boundaries.
+Backend is separated from frontend for clear API boundaries.
 
 Checkout is simulated → orders are logged to console and returned in API response.
 
@@ -113,8 +110,8 @@ Update item quantities directly in cart.
 
 Persist cart in localStorage (so items survive refresh).
 
-Extendable API → easily replaced with a real DB later.
+Extendable API → easily replaced with a real database later.
 
-🔗 Repo Link Placeholder
+🔗 Repository Link
 
 👉 GitHub Repository
