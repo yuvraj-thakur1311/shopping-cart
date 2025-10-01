@@ -121,7 +121,7 @@ app.post('/api/orders', async (req, res) => {
   }
 
   try {
-    // fetch product list fresh
+
     const response = await fetch('https://fakestoreapi.com/products');
     const products = await response.json();
 
@@ -142,8 +142,20 @@ app.post('/api/orders', async (req, res) => {
           price: product.price,
           subtotal
         });
+
+        console.log(`\n  ${index + 1}. ${product.title}`);
+        console.log(`     Product ID: ${item.productId}`);
+        console.log(`     Category: ${product.category}`);
+        console.log(`     Quantity: ${item.quantity}`);
+        console.log(`     Price: $${product.price.toFixed(2)}`);
+        console.log(`     Subtotal: $${subtotal.toFixed(2)}`);
       }
     });
+
+    console.log('\n---------------------------------------------');
+    console.log(`TOTAL AMOUNT: $${total.toFixed(2)}`);
+    console.log(`Total Items: ${orderDetails.length}`);
+    console.log('=============================================\n');
 
     res.status(201).json({
       success: true,
@@ -155,11 +167,10 @@ app.post('/api/orders', async (req, res) => {
       }
     });
   } catch (err) {
-    console.error('Error processing order:', err);
+    console.error(' Error processing order:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
 
 app.get('/', (req, res) => {
   res.json({ 
