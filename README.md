@@ -83,8 +83,8 @@ shopping-cart/
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/<your-username>/minimal-ecommerce.git
-cd minimal-ecommerce
+git clone https://github.com/yuvraj-thakur1311/shopping-cart.git
+cd shopping-cart
 ```
 
 ### 2. Backend Setup
@@ -164,7 +164,6 @@ Returns array of product objects.
     "description": "Product description",
     "category": "electronics",
     "image": "image-url",
-    "rating": { "rate": 4.5, "count": 120 }
   }
 ]
 ```
@@ -196,7 +195,6 @@ Processes cart checkout.
     "orderId": 123456,
     "itemCount": 1,
     "totalAmount": 99.99,
-    "estimatedDelivery": "3-5 business days",
     "timestamp": "2025-10-01T12:00:00.000Z"
   }
 }
