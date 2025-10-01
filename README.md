@@ -1,117 +1,152 @@
-E-Commerce Project
+# E-Commerce Project
 
 A minimal full-stack e-commerce site where users can browse products, add them to a cart, and simulate checkout.
+This project demonstrates **frontend + backend integration**, API usage, state management, and clean architecture.
 
-This project demonstrates frontend + backend integration, API usage, state management, and testing.
-
-Project Goal
+## 🎯 Project Goal
 
 Build a simple shopping cart flow with a backend API and frontend UI.
 
-Core Features
-Backend
+## ✨ Core Features
 
-Products API – Returns a JSON list of products (hardcoded or fetched from Fake Store API
-).
+### Backend
+- **Products API** – Returns a JSON list of products (hardcoded, compatible with Fake Store API structure)
+- **Checkout API** – Accepts cart data, calculates totals, logs orders to console, and returns success confirmation
 
-Orders API – Accepts a list of product IDs and quantities, calculates totals, logs the order, and returns a success message.
+### Frontend
+- Fetch and display products in a responsive grid
+- Add/remove items from cart with real-time updates
+- Redux-based cart state management
+- Cart view with items, quantities, and total price calculation
+- Checkout button → sends cart data to backend API with order confirmation
 
-Frontend
+## 🛠️ Tech Stack
 
-Fetch and display products in a grid.
+**Backend:**
+- Node.js & Express
+- CORS for cross-origin requests
+- Nodemon for development
 
-Add items to a cart.
+**Frontend:**
+- React 18
+- Redux Toolkit (cart state management)
+- React Router (navigation)
+- React Hot Toast (notifications)
+- Tailwind CSS (styling)
 
-Manage cart state (client-side).
+**Testing:**
+- Jest & Supertest (backend API tests)
 
-Show a cart view with items, quantities, and total price.
+## 📁 Project Structure
 
-Checkout button → sends cart data to backend API.
-
-🛠️ Tech Stack
-
-Backend: Node.js, Express, CORS, node-fetch
-
-Frontend: React, Redux Toolkit (for cart state), Fetch API
-
-Testing: Jest, Supertest (backend API tests)
-
-Project Structure
-project-root/
+minimal-ecommerce/
 │
 ├── backend/
-│   ├── server.js         # Express app (routes defined here)
-│   ├── start.js          # Entry point (starts server on PORT 5000)
+│   ├── server.js              # Express app with routes
 │   ├── package.json
 │   └── tests/
-│       └── products.test.js   # Example Jest/Supertest test
+│       └── products.test.js   # API tests
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── components/   # React components
-│   │   ├── redux/        # Cart slice + store
-│   │   ├── pages/        # Home, Cart pages
-│   │   └── App.js
+│   │   ├── components/        # CartItem, Navbar, Product, Spinner
+│   │   ├── redux/
+│   │   │   ├── slice/
+│   │   │   │   └── CartSlice.js
+│   │   │   └── store.js
+│   │   ├── pages/             # Home, Cart
+│   │   ├── App.js
+│   │   └── index.js
 │   ├── public/
-│   │   └── index.html
-│   ├── package.json
+│   └── package.json
 │
 └── README.md
 
-⚙️ Setup Instructions
-1. Clone Repository
+## ⚙️ Setup Instructions
+
+### 1. Clone Repository
+```bash
 git clone https://github.com/<your-username>/minimal-ecommerce.git
 cd minimal-ecommerce
+```
 
-2. Backend Setup
+### 2. Backend Setup
+```bash
 cd backend
 npm install
-npm run dev   # starts server with nodemon (http://localhost:5000)
+npm run dev   # starts server on http://localhost:5000
+```
+**Available endpoints:**
 
-3. Frontend Setup
-cd ../frontend
+```
+GET http://localhost:5000/api/products - Get all products
+POST http://localhost:5000/api/checkout - Process checkout
+```
+
+### 3. Frontend Setup
+```bash
+cd frontend
 npm install
-npm start     # starts frontend React app (http://localhost:3000)
-
-✅ Running Test Cases
-
-We use Jest + Supertest for backend API tests.
-
+npm start 
+```
+### 4. Running Tests
+Backend API tests use Jest + Supertest.
 From backend/ directory:
-
+```bash
 npm test
+```
 
-Example test (tests/products.test.js)
-const request = require('supertest');
-const app = require('../server');
+## 🚀 Usage Flow
 
-describe("GET /api/products", () => {
-  it("should return a list of products", async () => {
-    const res = await request(app).get('/api/products');
-    expect(res.statusCode).toBe(200);
-    expect(Array.isArray(res.body)).toBe(true);
-    expect(res.body.length).toBeGreaterThan(0);
-  });
-});
+1. **Browse Products** - View all available products on the home page
+2. **Add to Cart** - Click "Add to Cart" on any product
+3. **View Cart** - Navigate to cart page to see selected items
+4. **Update Cart** - Remove unwanted items
+5. **Checkout** - Click "CheckOut Now" to place order
+6. **Confirmation** - Receive order confirmation with order ID
 
-📌 Assumptions & Design Choices
+## 📌 Design Choices & Assumptions
 
-No database → Products are hardcoded or fetched from Fake Store API.
+- **No Database** – Products are hardcoded in backend for simplicity
+- **Client-Side Cart** – Cart state managed with Redux Toolkit
+- **Simulated Checkout** – Orders logged to backend console with confirmation response
+- **Separated Architecture** – Clear API boundaries between frontend and backend
+- **Responsive Design** – Mobile-first approach with Tailwind CSS
+- **Production Ready** – Easy to extend with real database and payment integration
 
-Cart state is client-side only (with optional localStorage persistence).
+## 🌟 Key Features Implemented
 
-Backend is separated from frontend for clear API boundaries.
+- ✅ Product listing with real product data
+- ✅ Add/Remove items from cart
+- ✅ Real-time cart count badge
+- ✅ Cart subtotal calculation
+- ✅ Checkout with backend integration
+- ✅ Order confirmation
+- ✅ Toast notifications for user feedback
+- ✅ Responsive design for all devices
+- ✅ Clean console logging for order tracking
 
-Checkout is simulated → orders are logged to console and returned in API response.
+### Frontend
+Update API endpoint in `src/pages/Home.jsx` and `src/pages/Cart.jsx`:
+```javascript
+const API_URL = "http://localhost:5000/api/products";
+```
 
-🌟 Bonus Features
+## 📝 API Documentation
 
-Update item quantities directly in cart.
+### GET /api/products
+Returns array of product objects.
 
-Persist cart in localStorage (so items survive refresh).
-
-Extendable API → easily replaced with a real database later.
-
-🔗 Repository Link
-
-👉 GitHub Repository
+**Response:**
+```json
+[
+  {
+    "id": 1,
+    "title": "Product Name",
+    "price": 99.99,
+    "description": "Product description",
+    "category": "electronics",
+    "image": "image-url",
+    "rating": { "rate": 4.5, "count": 120 }
+  }
+]
