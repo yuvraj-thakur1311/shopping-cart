@@ -50,32 +50,30 @@ shopping-cart/
 │   └── tests/
 │       └── products.test.js
 │
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── CartItem.js
-│   │   │   ├── Navbar.js
-│   │   │   ├── Product.js
-│   │   │   └── Spinner.css
-│   │   ├── redux/
-│   │   │   ├── slice/
-│   │   │   │   └── CartSlice.js
-│   │   │   └── store.js
-│   │   ├── pages/
-│   │   │   ├── Home.js
-│   │   │   └── Cart.js
-│   │   ├── App.js
-│   │   ├── App.css
-│   │   ├── index.js
-│   │   └── index.css
-│   ├── public/
-│   │   └── index.html
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── .gitignore
-│   ├── postcss.config.js
-│   └── tailwind.config.js
-│
+├── src/
+│   ├── components/
+│   │   ├── CartItem.js
+│   │   ├── Navbar.js
+│   │   ├── Product.js
+│   │   └── Spinner.js
+│   ├── redux/
+│   │   ├── slice/
+│   │   │   └── CartSlice.js
+│   │   └── store.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   └── Cart.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
+├── public/
+│   └── index.html
+├── package.json
+├── package-lock.json
+├── .gitignore
+├── postcss.config.js
+├── tailwind.config.js
 └── README.md
 ```
 
@@ -93,6 +91,7 @@ cd backend
 npm install
 npm run dev   # starts server on http://localhost:5000
 ```
+
 **Available endpoints:**
 
 ```
@@ -101,10 +100,10 @@ POST http://localhost:5000/api/checkout - Process checkout
 ```
 
 ### 3. Frontend Setup
+Open a new terminal in the root directory (shopping-cart/) :
 ```bash
-cd frontend
 npm install
-npm start 
+npm start  # starts React app on http://localhost:3000
 ```
 ### 4. Running Tests
 Backend API tests use Jest + Supertest.
