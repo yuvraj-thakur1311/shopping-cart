@@ -136,7 +136,7 @@ const API_URL = "http://localhost:5000/api/products";
 
 ## 📝 API Documentation
 
-### GET /api/products
+ ### -> GET /api/products
 Returns array of product objects.
 
 **Response:**
@@ -152,3 +152,51 @@ Returns array of product objects.
     "rating": { "rate": 4.5, "count": 120 }
   }
 ]
+```
+### -> POST /api/checkout
+Processes cart checkout.
+
+**Request Body:**
+```json
+{
+  "cart": [
+    {
+      "id": 1,
+      "title": "Product Name",
+      "price": 99.99,
+      "image": "image-url"
+    }
+  ],
+  "totalAmount": 99.99
+}
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "message": "Order placed successfully!",
+  "orderDetails": {
+    "orderId": 123456,
+    "itemCount": 1,
+    "totalAmount": 99.99,
+    "estimatedDelivery": "3-5 business days",
+    "timestamp": "2025-10-01T12:00:00.000Z"
+  }
+}
+```
+
+##  🔮 Future Enhancements:
+
+- User authentication
+- Database integration (MongoDB/PostgreSQL)
+- Payment gateway (Stripe/PayPal)
+- Order history
+- Product search and filtering
+- Wishlist functionality
+- Product reviews and ratings
+- Admin dashboard
+- Email notifications
+- Inventory management
+
