@@ -154,41 +154,27 @@ const API_URL = "http://localhost:5000/api/products";
 ### -> POST /api/checkout
 Processes cart checkout.
 
-**Request Body:**
-```json
-   1. Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
-     Product ID: 1
-     Category: men's clothing
-     Quantity: 1
-     Price: $109.95
-     Subtotal: $109.95
-
-  2. Mens Casual Premium Slim Fit T-Shirts
-     Product ID: 2
-     Category: men's clothing
-     Quantity: 1
-     Price: $22.30
-     Subtotal: $22.30
-
----------------------------------------------
-TOTAL AMOUNT: $132.25
-Total Items: 2
-=============================================
-
-```
 
 **Response:**
 
 ```json
 {
-  "success": true,
-  "message": "Order placed successfully!",
-  "orderDetails": {
-    "orderId": 123456,
-    "itemCount": 1,
-    "totalAmount": 99.99,
-    "timestamp": "2025-10-01T12:00:00.000Z"
-  }
+  "cart": [
+    {
+      "id": 1,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "category": "men's clothing",
+      "quantity": 1,
+      "price": 109.95
+    },
+    {
+      "id": 2,
+      "title": "Mens Casual Premium Slim Fit T-Shirts",
+      "category": "men's clothing",
+      "quantity": 1,
+      "price": 22.30
+    }
+  ]
 }
 ```
 
