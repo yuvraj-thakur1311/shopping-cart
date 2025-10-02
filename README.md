@@ -82,7 +82,6 @@ shopping-cart/
 ### 1. Clone Repository
 ```bash
 git clone https://github.com/yuvraj-thakur1311/shopping-cart.git
-cd shopping-cart
 ```
 
 ### 2. Backend Setup
