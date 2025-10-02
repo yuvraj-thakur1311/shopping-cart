@@ -156,7 +156,7 @@ Processes cart checkout.
 
 **Request Body:**
 ```json
- 1. Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+   1. Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
      Product ID: 1
      Category: men's clothing
      Quantity: 1
@@ -174,6 +174,7 @@ Processes cart checkout.
 TOTAL AMOUNT: $132.25
 Total Items: 2
 =============================================
+
 ```
 
 **Response:**
