@@ -150,38 +150,30 @@ const API_URL = "http://localhost:5000/api/products";
 
 ## 📝 API Documentation
 
- ### -> GET /api/products
-Returns array of product objects.
 
-**Response:**
-```json
-[
-  {
-    "id": 1,
-    "title": "Product Name",
-    "price": 99.99,
-    "description": "Product description",
-    "category": "electronics",
-    "image": "image-url",
-  }
-]
-```
 ### -> POST /api/checkout
 Processes cart checkout.
 
 **Request Body:**
 ```json
-{
-  "cart": [
-    {
-      "id": 1,
-      "title": "Product Name",
-      "price": 99.99,
-      "image": "image-url"
-    }
-  ],
-  "totalAmount": 99.99
-}
+ 1. Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+     Product ID: 1
+     Category: men's clothing
+     Quantity: 1
+     Price: $109.95
+     Subtotal: $109.95
+
+  2. Mens Casual Premium Slim Fit T-Shirts
+     Product ID: 2
+     Category: men's clothing
+     Quantity: 1
+     Price: $22.30
+     Subtotal: $22.30
+
+---------------------------------------------
+TOTAL AMOUNT: $132.25
+Total Items: 2
+=============================================
 ```
 
 **Response:**
